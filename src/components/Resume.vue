@@ -44,7 +44,7 @@
 
       <img
         class="float-right w-44 rounded-full border-4 border-gray-500"
-        src="../assets/mee.jpg"
+        src="../assets/qwerty.jpg"
         alt="Profile Image"
       />
 
