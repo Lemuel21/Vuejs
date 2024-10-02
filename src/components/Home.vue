@@ -13,7 +13,11 @@
     <div
       class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden"
     >
-      <img class="object-cover object-center h-32" src="../assets/Mee.jpg" alt="New Background" />
+      <img
+        class="object-cover object-center h-32"
+        src="../assets/qwerty.jpg"
+        alt="New Background"
+      />
     </div>
     <div class="text-center mt-2">
       <h2 class="font-semibold">Lemmei</h2>
