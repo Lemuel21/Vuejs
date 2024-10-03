@@ -4,7 +4,6 @@
     <header class="fixed inset-x-0 bottom-0 bg-neutral-800 sm:relative">
       <div class="mx-auto justify-between p-3 sm:flex sm:max-w-4xl sm:p-4">
         <!-- title -->
-
         <a href="#" class="hidden items-center gap-1 sm:flex">
           <img
             class="inline-block w-8 object-cover"
@@ -12,30 +11,6 @@
           />
           <span class="font-fira text-lg font-bold text-white">Aleksandr Hovhannisyan</span>
         </a>
-
-        <!-- navigation right -->
-        <div class="flex sm:gap-2">
-          <a
-            href="#"
-            class="block flex-1 py-2 text-center text-lg text-white hover:bg-neutral-700 sm:hidden sm:px-3"
-            >Home</a
-          >
-          <a
-            href="#"
-            class="block flex-1 bg-neutral-700 py-2 text-center text-lg text-white sm:px-3"
-            >About</a
-          >
-          <a
-            href="#"
-            class="block flex-1 py-2 text-center text-lg text-white hover:bg-neutral-700 sm:px-3"
-            >Art</a
-          >
-          <a
-            href="#"
-            class="block flex-1 py-2 text-center text-lg text-white hover:bg-neutral-700 sm:px-3"
-            >Blog</a
-          >
-        </div>
       </div>
     </header>
 
@@ -57,18 +32,6 @@
         and contribute to projects in meaningful ways
       </p>
 
-      <!-- <p class="mt-10 text-lg dark:text-neutral-200">
-        Speaking of last names, if mine hasn’t already betrayed me, I was originally born in
-        Armenia, a beautiful country nestled between Europe, Asia, and a bunch of biblically old
-        mountains. You can almost spot it on a world map if you squint hard enough.
-      </p>
-
-      <p class="mt-10 text-lg dark:text-neutral-200">
-        Long story short, I moved to the U.S. when I was little and have lived in the states for
-        most of my life. I currently reside in Florida, home to plenty of friendly gators, lovebugs
-        whose carcasses will eat away at your car’s paint, and the infamous Florida Man.
-      </p> -->
-
       <!-- Work Experience -->
       <section class="mt-12">
         <h2 class="text-3xl font-bold dark:text-white">Work Experience</h2>
@@ -85,122 +48,26 @@
 
       <!-- Software Projects -->
       <section class="mt-12">
-        <h2 class="text-3xl font-bold dark:text-white">Software Projects</h2>
+        <h2 class="text-3xl font-bold mb-6">Software Projects</h2>
 
         <!-- Projects gallery -->
-        <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <section
-            class="card cursor-pointer rounded p-5 shadow-sm shadow-black/60 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800"
+            v-for="(project, index) in projects"
+            :key="index"
+            class="bg-white dark:bg-neutral-800 rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl hover:shadow-gray-400/50 dark:hover:shadow-gray-800/50"
           >
-            <header class="flex items-center justify-between dark:text-gray-50">
-              <h3 class="text-lg font-bold">Soda Report for the Year 2022</h3>
-              <span></span>
+            <header class="mb-4">
+              <h3 class="text-lg font-bold dark:text-white">{{ project.title }}</h3>
             </header>
-
-            <footer class="my-4 flex gap-1">
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >PowerBi</span
+            <footer class="flex flex-wrap gap-2">
+              <span
+                v-for="(tech, techIndex) in project.techStack.split(',')"
+                :key="techIndex"
+                class="bg-gray-100 dark:bg-neutral-700 text-sm px-3 py-1 rounded-md shadow-inner dark:text-gray-50"
+                >{{ tech.trim() }}</span
               >
             </footer>
-          </section>
-
-          <section
-            class="card cursor-pointer rounded p-5 shadow-sm shadow-black/60 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800"
-          >
-            <header class="flex items-center justify-between dark:text-gray-50">
-              <h3 class="text-lg font-bold">This Website!</h3>
-              <span></span>
-            </header>
-
-            <footer class="my-4 flex gap-1">
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Vuejs</span
-              >
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Tailwind</span
-              >
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >css</span
-              >
-            </footer>
-          </section>
-
-          <section
-            class="card cursor-pointer rounded p-5 shadow-sm shadow-black/60 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800"
-          >
-            <header class="flex items-center justify-between dark:text-gray-50">
-              <h3 class="text-lg font-bold">Decorator Pattern</h3>
-              <span></span>
-            </header>
-            <footer class="my-4 flex gap-1">
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Java</span
-              >
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Object-Oriented</span
-              >
-            </footer>
-          </section>
-
-          <section
-            class="card cursor-pointer rounded p-5 shadow-sm shadow-black/60 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800"
-          >
-            <header class="flex items-center justify-between dark:text-gray-50">
-              <h3 class="text-lg font-bold">Builder Pattern</h3>
-              <span></span>
-            </header>
-            <div class="mt-2 dark:text-gray-300"></div>
-
-            <footer class="my-4 flex gap-1">
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Java</span
-              >
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Object-Oriented</span
-              >
-            </footer>
-          </section>
-
-          <section
-            class="card cursor-pointer rounded p-5 shadow-sm shadow-black/60 transition hover:-translate-y-2 hover:shadow-md hover:shadow-black/50 dark:bg-neutral-800"
-          >
-            <header class="flex items-center justify-between dark:text-gray-50">
-              <h3 class="text-lg font-bold">Solid Principle</h3>
-              <span></span>
-            </header>
-            <div class="mt-2 dark:text-gray-300"></div>
-
-            <footer class="my-4 flex gap-1">
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Java</span
-              >
-              <span class="bg-neutral-100 px-4 py-1 text-sm dark:bg-neutral-600 dark:text-gray-50"
-                >Object-Oriented</span
-              >
-            </footer>
-          </section>
-
-          <section class="flex flex-col items-center justify-center">
-            <header>
-              <h3 class="text-xl font-bold dark:text-white">Want to see more of my work</h3>
-              <h4 class="text-center text-lg dark:text-neutral-200">Check out my other repos:</h4>
-            </header>
-            <div class="mt-4">
-              <a href="https://github.com/Lemuel21" target="_blank">
-                <svg
-                  class="h-12 text-black dark:text-white"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>GitHub</title>
-                  <path
-                    fill="currentColor"
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  ></path>
-                </svg>
-              </a>
-            </div>
           </section>
         </div>
       </section>
@@ -275,4 +142,15 @@
     </section>
   </div>
 </template>
-<script setup></script>
+
+<script setup>
+import { useProjectStore } from '@/stores/useProjectStore'
+
+// Access the shared Pinia store
+const projectStore = useProjectStore()
+const projects = projectStore.projects
+</script>
+
+<style scoped>
+/* Add your custom styles here */
+</style>
